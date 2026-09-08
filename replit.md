@@ -1,9 +1,10 @@
-# [Project name]
+# Contact Book
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A small Python console app for managing contacts with JSON file persistence.
 
 ## Run & Operate
 
+- `python3 contact_book.py` — run the contact book
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
@@ -22,15 +23,17 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `contact_book.py` — CLI and JSON storage logic
+- `contacts.json` — created automatically when the first contact is saved
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Contacts use a human-readable JSON array so the saved data is easy to inspect or back up.
+- Writes use a temporary file and atomic replacement to avoid leaving a partially written contacts file.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+The app supports adding contacts with a name, phone, and email; searching all contact fields; deleting with confirmation; and listing the complete contact book.
 
 ## User preferences
 
